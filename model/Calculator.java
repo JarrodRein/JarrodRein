@@ -25,7 +25,7 @@ public void subtract(){
 public void divide(){
         result = lastN / lastN2;
     }
-        public double getResult(){
+public double getResult(){
             return result;
         }
 
