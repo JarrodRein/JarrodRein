@@ -32,12 +32,19 @@ public class MenuScreen {
         panel.add(piggybankButton);
         cp.add(BorderLayout.CENTER,panel);
 
-        calcButton.addActionListener(e-> 
-            System.out.println("Calc button is pressed")
-        );
-        piggybankButton.addActionListener(e-> 
-            System.out.println("piggybank button is pressed")
-        );
-    }
-    
+        calcButton.addActionListener(e-> {
+        window.getContentPane().removeAll();
+        var calc = new CalculatorSimulator(window);
+        calc.init();
+        window.pack();
+        window.revalidate();
+    });
+    piggybankButton.addActionListener(e -> {
+        window.getContentPane().removeAll();
+        var piggybank = new PiggyBankSimulator(window);
+        piggybank.init();
+        window.pack();
+        window.revalidate();
+ });
+}
 }
