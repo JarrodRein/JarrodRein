@@ -24,9 +24,20 @@ public class MenuScreen {
     public void init(){
         Container cp = window.getContentPane();
         JPanel panel = new JPanel();
-        panel.add(new JButton("1"));
-        panel.add(new JButton("2"));
+        panel.setPreferredSize(new Dimension(400, 200));
+        panel.setLayout(new GridLayout(2,1));
+        JButton calcButton = new JButton("Calculator Simulator");
+        JButton piggybankButton = new JButton("PiggyBank Simulator");
+        panel.add(calcButton);
+        panel.add(piggybankButton);
         cp.add(BorderLayout.CENTER,panel);
+
+        calcButton.addActionListener(e-> 
+            System.out.println("Calc button is pressed")
+        );
+        piggybankButton.addActionListener(e-> 
+            System.out.println("piggybank button is pressed")
+        );
     }
     
 }
